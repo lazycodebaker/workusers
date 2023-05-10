@@ -15,7 +15,7 @@ This is a Node.js project which can be started using the `npm run start` command
 
 1. Open a terminal window and navigate to the project directory.
 2. Run `npm run start` to start the Node.js server.
-3. The server should now be running and you can access it by visiting `http://localhost:3000` in a web browser.
+3. The server should now be running and you can access it by visiting `http://localhost:4000` in a web browser.
 
 ## Configuration
 
