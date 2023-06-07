@@ -1,34 +1,94 @@
-# Node.js Project Readme
+Express User API
+This is a simple RESTful API built with Express, which allows you to perform CRUD (Create, Read, Update, Delete) operations on user data. The API supports the following endpoints:
 
-## Introduction
+API Endpoints
+GET /api/users
+This endpoint retrieves a list of all users stored in the database.
 
-This is a Node.js project which can be started using the `npm run start` command. This project aims to provide a starting point for Node.js development and can be customized to suit specific needs.
+Example Request
 
-## Installation
+GET /api/users
 
-1. Clone the repository or download the source code.
-2. Install Node.js and npm if they are not already installed on your system.
-3. Open a terminal window and navigate to the project directory.
-4. Run `npm install` to install the project dependencies.
+Example Response
 
-## Usage
+[
+  {
+    "id": "7f12b09e-6e6f-4aaf-9a46-5869c96ef65c",
+    "username": "john_doe",
+    "age": 25,
+    "hobbies": ["reading", "gaming"]
+  },
+  {
+    "id": "a4b402f3-3e48-4a2c-8a7a-96dbb61b2e9f",
+    "username": "jane_smith",
+    "age": 30,
+    "hobbies": ["painting", "traveling"]
+  }
+]
 
-1. Open a terminal window and navigate to the project directory.
-2. Run `npm run start` to start the Node.js server.
-3. The server should now be running and you can access it by visiting `http://localhost:4000` in a web browser.
+GET /api/users/:userId
+This endpoint retrieves a specific user based on their userId.
 
-## Configuration
+Example Request
 
-The project can be configured by modifying the `config.js` file. This file contains settings such as the server port and database connection details.
+GET /api/users/7f12b09e-6e6f-4aaf-9a46-5869c96ef65c
 
-## Development
+Example Response
 
-During development, you can use the `npm run dev` command to start the server with nodemon. This will automatically restart the server when changes are made to the source code.
+{
+  "id": "7f12b09e-6e6f-4aaf-9a46-5869c96ef65c",
+  "username": "john_doe",
+  "age": 25,
+  "hobbies": ["reading", "gaming"]
+}
 
-## Testing
+POST /api/users
+This endpoint creates a new user with the provided information.
 
-Tests can be run using the `npm run test` command. Tests are located in the `test/` directory and use the Mocha and Chai testing frameworks.
+Example Request
 
-## License
+POST /api/users
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+Body:
+{
+  "username": "new_user",
+  "age": 20,
+  "hobbies": ["music", "sports"]
+}
+
+
+Example Response 
+
+{
+  "id": "d0d7e8b2-81b4-4419-993d-3351676d61b1",
+  "username": "new_user",
+  "age": 20,
+  "hobbies": ["music", "sports"]
+}
+
+
+PUT /api/users/:userId
+This endpoint updates the information of an existing user identified by their userId.
+
+Example Request
+
+PUT /api/users/d0d7e8b2-81b4-4419-993d-3351676d61b1
+
+Body:
+{
+  "username": "updated_user",
+  "age": 22,
+  "hobbies": ["music", "cooking"]
+}
+
+DELETE /api/users/:userId
+This endpoint deletes a user with the provided userId from the database.
+
+Example Request
+DELETE /api/users/d0d7e8b2-81b4-4419-993d-3351676d61b1
+
+No Content (204)
+
+
+
+
